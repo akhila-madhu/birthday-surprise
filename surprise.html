@@ -174,13 +174,14 @@ startBtn.addEventListener("click", () => {
     delay += 6;
   });
 
-  /* Show video after text and stop music */
+  /* Stop music BEFORE video starts */
   setTimeout(() => {
-    letterDiv.style.display = "none";
-    video.style.display = "block";
-    video.play();         // ✅ plays with sound now
     audio.pause();        // stop background music
     audio.currentTime = 0;
+
+    letterDiv.style.display = "none";
+    video.style.display = "block";
+    video.play();         // ✅ video plays with sound only
   }, delay * 1000);
 });
 </script>
